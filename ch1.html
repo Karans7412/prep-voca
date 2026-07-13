@@ -218,21 +218,22 @@
 </ul>
 <footer>ⓒ 프렙영어 All rights reserved.</footer>
 <script>
-  // Playback always: intro (greeting) -> word(s) -> outro (closing)
+  // Single word tap : short greeting -> word
+  // Play all        : intro -> all words -> outro   (same Andrew voice)
   const audio = new Audio();
   const items = [...document.querySelectorAll('.word')];
   let seq = [];        // ordered list of {src, el}
   let idx = 0;
   const INTRO = 'audio/intro.mp3';
   const OUTRO = 'audio/outro.mp3';
+  const GREET = 'audio/greet.mp3';   // "Hello, PREP friends!"
 
   function mark(el) {
     items.forEach(i => i.classList.remove('playing'));
     if (el) el.classList.add('playing');
   }
-  function playFrom(list) {
-    // list: array of {src, el}; wrap with intro + outro
-    seq = [{ src: INTRO, el: null }, ...list, { src: OUTRO, el: null }];
+  function run(list) {
+    seq = list;
     idx = 0;
     step();
   }
@@ -246,10 +247,10 @@
   audio.onended = step;
 
   items.forEach(el => el.addEventListener('click', () =>
-    playFrom([{ src: el.dataset.src, el }])
+    run([{ src: GREET, el: null }, { src: el.dataset.src, el }])
   ));
   document.getElementById('playAll').addEventListener('click', () =>
-    playFrom(items.map(el => ({ src: el.dataset.src, el })))
+    run([{ src: INTRO, el: null }, ...items.map(el => ({ src: el.dataset.src, el })), { src: OUTRO, el: null }])
   );
   document.getElementById('stop').addEventListener('click', () => {
     seq = []; idx = 0; audio.pause(); mark(null);
