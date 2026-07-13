@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>프렙블럭스2 &middot; Chapter 17</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #F1F8F2; color: #1a1a1a; padding-bottom: 40px; }
+  header { text-align: center; padding: 18px 16px 16px; border-bottom: 3px solid #2E7D32; background: #fff; }
+  .hlogo { display: block; margin: 0 auto 4px; height: 46px; width: 46px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#2E7D32; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#1B5E20; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #1B5E20; font-weight:600; }
+  .theme { font-size: 12px; color:#9E9E9E; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #2E7D32; background: #2E7D32; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #2E7D32; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #C8E6C9; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #2E7D32; background: #E8F5E9; }
+  .num { font-size: 12px; color: #A5C9A8; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #2E7D32; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #B0BEC5; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#1B5E20; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 17</div>
+  <div class="theme">건강·병원·몸</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch17/clinic.mp3">
+        <span class="num">01</span>
+        <span class="en">clinic</span>
+        <span class="ko">진료소, 병원</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/checkup.mp3">
+        <span class="num">02</span>
+        <span class="en">checkup</span>
+        <span class="ko">건강검진</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/prescription.mp3">
+        <span class="num">03</span>
+        <span class="en">prescription</span>
+        <span class="ko">처방전</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/diagnose.mp3">
+        <span class="num">04</span>
+        <span class="en">diagnose</span>
+        <span class="ko">진단하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/surgeon.mp3">
+        <span class="num">05</span>
+        <span class="en">surgeon</span>
+        <span class="ko">외과 의사</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/therapy.mp3">
+        <span class="num">06</span>
+        <span class="en">therapy</span>
+        <span class="ko">치료, 요법</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/treatment.mp3">
+        <span class="num">07</span>
+        <span class="en">treatment</span>
+        <span class="ko">치료, 처치</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/bandage.mp3">
+        <span class="num">08</span>
+        <span class="en">bandage</span>
+        <span class="ko">붕대</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/injection.mp3">
+        <span class="num">09</span>
+        <span class="en">injection</span>
+        <span class="ko">주사</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/vaccine.mp3">
+        <span class="num">10</span>
+        <span class="en">vaccine</span>
+        <span class="ko">백신</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/antibiotic.mp3">
+        <span class="num">11</span>
+        <span class="en">antibiotic</span>
+        <span class="ko">항생제</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/dose.mp3">
+        <span class="num">12</span>
+        <span class="en">dose</span>
+        <span class="ko">복용량, 1회분</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/heal.mp3">
+        <span class="num">13</span>
+        <span class="en">heal</span>
+        <span class="ko">낫다, 치유하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/pulse.mp3">
+        <span class="num">14</span>
+        <span class="en">pulse</span>
+        <span class="ko">맥박</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/X-ray.mp3">
+        <span class="num">15</span>
+        <span class="en">X-ray</span>
+        <span class="ko">엑스레이</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/appointment.mp3">
+        <span class="num">16</span>
+        <span class="en">appointment</span>
+        <span class="ko">진료 예약, 약속</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/cast.mp3">
+        <span class="num">17</span>
+        <span class="en">cast</span>
+        <span class="ko">깁스</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/specialist.mp3">
+        <span class="num">18</span>
+        <span class="en">specialist</span>
+        <span class="ko">전문의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/crutch.mp3">
+        <span class="num">19</span>
+        <span class="en">crutch</span>
+        <span class="ko">목발</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch17/wheelchair.mp3">
+        <span class="num">20</span>
+        <span class="en">wheelchair</span>
+        <span class="ko">휠체어</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

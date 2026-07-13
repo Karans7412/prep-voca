@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>프렙블럭스2 &middot; Chapter 34</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #F1F8F2; color: #1a1a1a; padding-bottom: 40px; }
+  header { text-align: center; padding: 18px 16px 16px; border-bottom: 3px solid #2E7D32; background: #fff; }
+  .hlogo { display: block; margin: 0 auto 4px; height: 46px; width: 46px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#2E7D32; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#1B5E20; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #1B5E20; font-weight:600; }
+  .theme { font-size: 12px; color:#9E9E9E; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #2E7D32; background: #2E7D32; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #2E7D32; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #C8E6C9; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #2E7D32; background: #E8F5E9; }
+  .num { font-size: 12px; color: #A5C9A8; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #2E7D32; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #B0BEC5; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#1B5E20; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 34</div>
+  <div class="theme">취미·예술·문화</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch34/rhythm.mp3">
+        <span class="num">01</span>
+        <span class="en">rhythm</span>
+        <span class="ko">리듬</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/melody.mp3">
+        <span class="num">02</span>
+        <span class="en">melody</span>
+        <span class="ko">선율</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/tone.mp3">
+        <span class="num">03</span>
+        <span class="en">tone</span>
+        <span class="ko">음색, 음조</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/lyrics.mp3">
+        <span class="num">04</span>
+        <span class="en">lyrics</span>
+        <span class="ko">가사</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/chord.mp3">
+        <span class="num">05</span>
+        <span class="en">chord</span>
+        <span class="ko">화음</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/instrument.mp3">
+        <span class="num">06</span>
+        <span class="en">instrument</span>
+        <span class="ko">악기</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/choir.mp3">
+        <span class="num">07</span>
+        <span class="en">choir</span>
+        <span class="ko">합창단</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/chorus.mp3">
+        <span class="num">08</span>
+        <span class="en">chorus</span>
+        <span class="ko">합창</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/orchestra.mp3">
+        <span class="num">09</span>
+        <span class="en">orchestra</span>
+        <span class="ko">관현악단</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/verse.mp3">
+        <span class="num">10</span>
+        <span class="en">verse</span>
+        <span class="ko">(노래의) 절</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/compose.mp3">
+        <span class="num">11</span>
+        <span class="en">compose</span>
+        <span class="ko">작곡하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/musician.mp3">
+        <span class="num">12</span>
+        <span class="en">musician</span>
+        <span class="ko">음악가</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/genre.mp3">
+        <span class="num">13</span>
+        <span class="en">genre</span>
+        <span class="ko">장르</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/vocal.mp3">
+        <span class="num">14</span>
+        <span class="en">vocal</span>
+        <span class="ko">보컬의, 노래의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/soprano.mp3">
+        <span class="num">15</span>
+        <span class="en">soprano</span>
+        <span class="ko">소프라노</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/acoustic.mp3">
+        <span class="num">16</span>
+        <span class="en">acoustic</span>
+        <span class="ko">어쿠스틱의, 음향의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/ensemble.mp3">
+        <span class="num">17</span>
+        <span class="en">ensemble</span>
+        <span class="ko">합주단, 앙상블</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/duet.mp3">
+        <span class="num">18</span>
+        <span class="en">duet</span>
+        <span class="ko">이중창, 이중주</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/classical.mp3">
+        <span class="num">19</span>
+        <span class="en">classical</span>
+        <span class="ko">클래식의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch34/tempo.mp3">
+        <span class="num">20</span>
+        <span class="en">tempo</span>
+        <span class="ko">박자, 템포</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>
