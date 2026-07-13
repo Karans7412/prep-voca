@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 19</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 19</div>
+  <div class="theme">성격·성향·자질</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch19/easygoing.mp3">
+        <span class="num">01</span>
+        <span class="en">easygoing</span>
+        <span class="ko">태평한, 느긋한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/eccentric.mp3">
+        <span class="num">02</span>
+        <span class="en">eccentric</span>
+        <span class="ko">괴짜의, 별난</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/empathetic.mp3">
+        <span class="num">03</span>
+        <span class="en">empathetic</span>
+        <span class="ko">공감하는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/extroverted.mp3">
+        <span class="num">04</span>
+        <span class="en">extroverted</span>
+        <span class="ko">외향적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/forgiving.mp3">
+        <span class="num">05</span>
+        <span class="en">forgiving</span>
+        <span class="ko">관대한, 잘 용서하는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/frugal.mp3">
+        <span class="num">06</span>
+        <span class="en">frugal</span>
+        <span class="ko">검소한, 절약하는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/gregarious.mp3">
+        <span class="num">07</span>
+        <span class="en">gregarious</span>
+        <span class="ko">사교적인, 무리 짓는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/humorous.mp3">
+        <span class="num">08</span>
+        <span class="en">humorous</span>
+        <span class="ko">유머러스한, 재미있는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/hypocrite.mp3">
+        <span class="num">09</span>
+        <span class="en">hypocrite</span>
+        <span class="ko">위선자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/immature.mp3">
+        <span class="num">10</span>
+        <span class="en">immature</span>
+        <span class="ko">미성숙한, 유치한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/indecisive.mp3">
+        <span class="num">11</span>
+        <span class="en">indecisive</span>
+        <span class="ko">우유부단한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/industrious.mp3">
+        <span class="num">12</span>
+        <span class="en">industrious</span>
+        <span class="ko">근면한, 부지런한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/inquisitive.mp3">
+        <span class="num">13</span>
+        <span class="en">inquisitive</span>
+        <span class="ko">호기심 많은, 탐구적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/introverted.mp3">
+        <span class="num">14</span>
+        <span class="en">introverted</span>
+        <span class="ko">내성적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/modesty.mp3">
+        <span class="num">15</span>
+        <span class="en">modesty</span>
+        <span class="ko">겸손, 정숙</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/moody.mp3">
+        <span class="num">16</span>
+        <span class="en">moody</span>
+        <span class="ko">기분 변화가 심한, 침울한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/obedient.mp3">
+        <span class="num">17</span>
+        <span class="en">obedient</span>
+        <span class="ko">순종적인, 말을 잘 듣는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/observant.mp3">
+        <span class="num">18</span>
+        <span class="en">observant</span>
+        <span class="ko">관찰력이 뛰어난, 주의 깊은</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/outspoken.mp3">
+        <span class="num">19</span>
+        <span class="en">outspoken</span>
+        <span class="ko">거침없이 말하는, 솔직한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/perceptive.mp3">
+        <span class="num">20</span>
+        <span class="en">perceptive</span>
+        <span class="ko">통찰력 있는, 지각이 예리한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/prudent.mp3">
+        <span class="num">21</span>
+        <span class="en">prudent</span>
+        <span class="ko">신중한, 분별 있는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/punctual.mp3">
+        <span class="num">22</span>
+        <span class="en">punctual</span>
+        <span class="ko">시간을 잘 지키는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/rebellious.mp3">
+        <span class="num">23</span>
+        <span class="en">rebellious</span>
+        <span class="ko">반항적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/resourceful.mp3">
+        <span class="num">24</span>
+        <span class="en">resourceful</span>
+        <span class="ko">수완이 좋은, 기지가 있는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/selfishness.mp3">
+        <span class="num">25</span>
+        <span class="en">selfishness</span>
+        <span class="ko">이기심</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/selfless.mp3">
+        <span class="num">26</span>
+        <span class="en">selfless</span>
+        <span class="ko">사심 없는, 이타적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/sincerity.mp3">
+        <span class="num">27</span>
+        <span class="en">sincerity</span>
+        <span class="ko">진심, 성실</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/stern.mp3">
+        <span class="num">28</span>
+        <span class="en">stern</span>
+        <span class="ko">엄격한, 근엄한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/stingy.mp3">
+        <span class="num">29</span>
+        <span class="en">stingy</span>
+        <span class="ko">인색한, 쩨쩨한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch19/stubbornness.mp3">
+        <span class="num">30</span>
+        <span class="en">stubbornness</span>
+        <span class="ko">고집, 완고함</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

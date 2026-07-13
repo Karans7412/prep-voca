@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 6</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 6</div>
+  <div class="theme">사고·인지·추론</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch6/contemplate.mp3">
+        <span class="num">01</span>
+        <span class="en">contemplate</span>
+        <span class="ko">숙고하다, 심사숙고하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/contradict.mp3">
+        <span class="num">02</span>
+        <span class="en">contradict</span>
+        <span class="ko">모순되다, 반박하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/correlate.mp3">
+        <span class="num">03</span>
+        <span class="en">correlate</span>
+        <span class="ko">상관관계가 있다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/correlation.mp3">
+        <span class="num">04</span>
+        <span class="en">correlation</span>
+        <span class="ko">상관관계</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/deliberate.mp3">
+        <span class="num">05</span>
+        <span class="en">deliberate</span>
+        <span class="ko">신중한, 숙고하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/discernment.mp3">
+        <span class="num">06</span>
+        <span class="en">discernment</span>
+        <span class="ko">식별력, 안목</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/generalization.mp3">
+        <span class="num">07</span>
+        <span class="en">generalization</span>
+        <span class="ko">일반화</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/generalize.mp3">
+        <span class="num">08</span>
+        <span class="en">generalize</span>
+        <span class="ko">일반화하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/hindsight.mp3">
+        <span class="num">09</span>
+        <span class="en">hindsight</span>
+        <span class="ko">뒤늦은 깨달음, 사후 판단</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/hypothesize.mp3">
+        <span class="num">10</span>
+        <span class="en">hypothesize</span>
+        <span class="ko">가설을 세우다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/identification.mp3">
+        <span class="num">11</span>
+        <span class="en">identification</span>
+        <span class="ko">식별, 신원 확인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/insightful.mp3">
+        <span class="num">12</span>
+        <span class="en">insightful</span>
+        <span class="ko">통찰력 있는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/intellect.mp3">
+        <span class="num">13</span>
+        <span class="en">intellect</span>
+        <span class="ko">지성, 지력</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/introspection.mp3">
+        <span class="num">14</span>
+        <span class="en">introspection</span>
+        <span class="ko">자기 성찰, 내성</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/introspective.mp3">
+        <span class="num">15</span>
+        <span class="en">introspective</span>
+        <span class="ko">자기 성찰적인, 내성적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/justification.mp3">
+        <span class="num">16</span>
+        <span class="en">justification</span>
+        <span class="ko">정당화, 근거</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/mentality.mp3">
+        <span class="num">17</span>
+        <span class="en">mentality</span>
+        <span class="ko">사고방식, 심성</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/mindful.mp3">
+        <span class="num">18</span>
+        <span class="en">mindful</span>
+        <span class="ko">염두에 두는, 주의하는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/mindfulness.mp3">
+        <span class="num">19</span>
+        <span class="en">mindfulness</span>
+        <span class="ko">마음챙김, 유념</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/misinterpret.mp3">
+        <span class="num">20</span>
+        <span class="en">misinterpret</span>
+        <span class="ko">잘못 해석하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/paradigm.mp3">
+        <span class="num">21</span>
+        <span class="en">paradigm</span>
+        <span class="ko">패러다임, 인식 틀</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/ponder.mp3">
+        <span class="num">22</span>
+        <span class="en">ponder</span>
+        <span class="ko">곰곰이 생각하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/presume.mp3">
+        <span class="num">23</span>
+        <span class="en">presume</span>
+        <span class="ko">추정하다, 가정하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/presumption.mp3">
+        <span class="num">24</span>
+        <span class="en">presumption</span>
+        <span class="ko">추정, 가정</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/rationalize.mp3">
+        <span class="num">25</span>
+        <span class="en">rationalize</span>
+        <span class="ko">합리화하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/realization.mp3">
+        <span class="num">26</span>
+        <span class="en">realization</span>
+        <span class="ko">깨달음, 실현</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/recollect.mp3">
+        <span class="num">27</span>
+        <span class="en">recollect</span>
+        <span class="ko">회상하다, 기억해내다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/reconsider.mp3">
+        <span class="num">28</span>
+        <span class="en">reconsider</span>
+        <span class="ko">재고하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/reflective.mp3">
+        <span class="num">29</span>
+        <span class="en">reflective</span>
+        <span class="ko">성찰적인, 반사하는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch6/retrospect.mp3">
+        <span class="num">30</span>
+        <span class="en">retrospect</span>
+        <span class="ko">회고, 회상</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

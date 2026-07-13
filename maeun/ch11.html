@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 11</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 11</div>
+  <div class="theme">감정·심리·태도</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch11/optimistic.mp3">
+        <span class="num">01</span>
+        <span class="en">optimistic</span>
+        <span class="ko">낙관적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/overwhelm.mp3">
+        <span class="num">02</span>
+        <span class="en">overwhelm</span>
+        <span class="ko">압도하다, 벅차게 하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/overwhelmed.mp3">
+        <span class="num">03</span>
+        <span class="en">overwhelmed</span>
+        <span class="ko">압도된, 벅찬</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/pain.mp3">
+        <span class="num">04</span>
+        <span class="en">pain</span>
+        <span class="ko">고통, 아픔</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/painful.mp3">
+        <span class="num">05</span>
+        <span class="en">painful</span>
+        <span class="ko">고통스러운, 아픈</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/panic.mp3">
+        <span class="num">06</span>
+        <span class="en">panic</span>
+        <span class="ko">공황, 극심한 공포; 당황하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/passion.mp3">
+        <span class="num">07</span>
+        <span class="en">passion</span>
+        <span class="ko">열정, 격정</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/passionate.mp3">
+        <span class="num">08</span>
+        <span class="en">passionate</span>
+        <span class="ko">열정적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/pessimism.mp3">
+        <span class="num">09</span>
+        <span class="en">pessimism</span>
+        <span class="ko">비관주의, 비관론</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/pessimistic.mp3">
+        <span class="num">10</span>
+        <span class="en">pessimistic</span>
+        <span class="ko">비관적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/pleased.mp3">
+        <span class="num">11</span>
+        <span class="en">pleased</span>
+        <span class="ko">기뻐하는, 만족하는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/pleasure.mp3">
+        <span class="num">12</span>
+        <span class="en">pleasure</span>
+        <span class="ko">기쁨, 즐거움</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/pride.mp3">
+        <span class="num">13</span>
+        <span class="en">pride</span>
+        <span class="ko">자부심, 자존심</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/proud.mp3">
+        <span class="num">14</span>
+        <span class="en">proud</span>
+        <span class="ko">자랑스러운, 자부심 있는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/psychology.mp3">
+        <span class="num">15</span>
+        <span class="en">psychology</span>
+        <span class="ko">심리학, 심리</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/regret.mp3">
+        <span class="num">16</span>
+        <span class="en">regret</span>
+        <span class="ko">후회; 후회하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/relax.mp3">
+        <span class="num">17</span>
+        <span class="en">relax</span>
+        <span class="ko">긴장을 풀다, 쉬다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/relieve.mp3">
+        <span class="num">18</span>
+        <span class="en">relieve</span>
+        <span class="ko">완화하다, 덜어주다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/relieved.mp3">
+        <span class="num">19</span>
+        <span class="en">relieved</span>
+        <span class="ko">안도한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/reluctant.mp3">
+        <span class="num">20</span>
+        <span class="en">reluctant</span>
+        <span class="ko">꺼리는, 주저하는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/resent.mp3">
+        <span class="num">21</span>
+        <span class="en">resent</span>
+        <span class="ko">분개하다, 원망하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/resentful.mp3">
+        <span class="num">22</span>
+        <span class="en">resentful</span>
+        <span class="ko">분개한, 억울해하는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/satisfied.mp3">
+        <span class="num">23</span>
+        <span class="en">satisfied</span>
+        <span class="ko">만족한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/self-esteem.mp3">
+        <span class="num">24</span>
+        <span class="en">self-esteem</span>
+        <span class="ko">자존감, 자긍심</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/sensitive.mp3">
+        <span class="num">25</span>
+        <span class="en">sensitive</span>
+        <span class="ko">민감한, 예민한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/sentiment.mp3">
+        <span class="num">26</span>
+        <span class="en">sentiment</span>
+        <span class="ko">감정, 정서, 소감</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/serene.mp3">
+        <span class="num">27</span>
+        <span class="en">serene</span>
+        <span class="ko">고요한, 평온한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/shame.mp3">
+        <span class="num">28</span>
+        <span class="en">shame</span>
+        <span class="ko">수치심, 부끄러움</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/stressful.mp3">
+        <span class="num">29</span>
+        <span class="en">stressful</span>
+        <span class="ko">스트레스가 많은</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch11/suffering.mp3">
+        <span class="num">30</span>
+        <span class="en">suffering</span>
+        <span class="ko">고통, 괴로움</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

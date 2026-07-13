@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 33</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 33</div>
+  <div class="theme">교육·학습·지식</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch33/scientific.mp3">
+        <span class="num">01</span>
+        <span class="en">scientific</span>
+        <span class="ko">과학적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/skill.mp3">
+        <span class="num">02</span>
+        <span class="en">skill</span>
+        <span class="ko">기술, 능력</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/subject.mp3">
+        <span class="num">03</span>
+        <span class="en">subject</span>
+        <span class="ko">과목, 주제, 대상</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/topic.mp3">
+        <span class="num">04</span>
+        <span class="en">topic</span>
+        <span class="ko">주제, 화제</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/academy.mp3">
+        <span class="num">05</span>
+        <span class="en">academy</span>
+        <span class="ko">학원, 학회, 학교</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/acquisition.mp3">
+        <span class="num">06</span>
+        <span class="en">acquisition</span>
+        <span class="ko">습득, 획득</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/application.mp3">
+        <span class="num">07</span>
+        <span class="en">application</span>
+        <span class="ko">적용, 지원, 신청</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/assignment.mp3">
+        <span class="num">08</span>
+        <span class="en">assignment</span>
+        <span class="ko">과제, 배정</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/assimilate.mp3">
+        <span class="num">09</span>
+        <span class="en">assimilate</span>
+        <span class="ko">흡수하다, 소화하다, 동화되다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/certificate.mp3">
+        <span class="num">10</span>
+        <span class="en">certificate</span>
+        <span class="ko">증명서, 자격증</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/competency.mp3">
+        <span class="num">11</span>
+        <span class="en">competency</span>
+        <span class="ko">역량, 능력</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/curriculum.mp3">
+        <span class="num">12</span>
+        <span class="en">curriculum</span>
+        <span class="ko">교육과정, 커리큘럼</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/definition.mp3">
+        <span class="num">13</span>
+        <span class="en">definition</span>
+        <span class="ko">정의, 뜻풀이</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/demonstrate.mp3">
+        <span class="num">14</span>
+        <span class="en">demonstrate</span>
+        <span class="ko">보여주다, 입증하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/discovery.mp3">
+        <span class="num">15</span>
+        <span class="en">discovery</span>
+        <span class="ko">발견</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/enlighten.mp3">
+        <span class="num">16</span>
+        <span class="en">enlighten</span>
+        <span class="ko">계몽하다, 깨우치다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/enroll.mp3">
+        <span class="num">17</span>
+        <span class="en">enroll</span>
+        <span class="ko">등록하다, 입학하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/expertise.mp3">
+        <span class="num">18</span>
+        <span class="en">expertise</span>
+        <span class="ko">전문 지식, 전문성</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/explanation.mp3">
+        <span class="num">19</span>
+        <span class="en">explanation</span>
+        <span class="ko">설명, 해명</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/foster.mp3">
+        <span class="num">20</span>
+        <span class="en">foster</span>
+        <span class="ko">기르다, 촉진하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/graduate.mp3">
+        <span class="num">21</span>
+        <span class="en">graduate</span>
+        <span class="ko">졸업하다, 졸업생</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/improvement.mp3">
+        <span class="num">22</span>
+        <span class="en">improvement</span>
+        <span class="ko">향상, 개선</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/institute.mp3">
+        <span class="num">23</span>
+        <span class="en">institute</span>
+        <span class="ko">연구소, 협회</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/institution.mp3">
+        <span class="num">24</span>
+        <span class="en">institution</span>
+        <span class="ko">기관, 제도</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/instruct.mp3">
+        <span class="num">25</span>
+        <span class="en">instruct</span>
+        <span class="ko">가르치다, 지시하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/instructor.mp3">
+        <span class="num">26</span>
+        <span class="en">instructor</span>
+        <span class="ko">강사, 교사</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/memorization.mp3">
+        <span class="num">27</span>
+        <span class="en">memorization</span>
+        <span class="ko">암기, 기억하기</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/memorize.mp3">
+        <span class="num">28</span>
+        <span class="en">memorize</span>
+        <span class="ko">암기하다, 외우다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/philosophy.mp3">
+        <span class="num">29</span>
+        <span class="en">philosophy</span>
+        <span class="ko">철학</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch33/proficiency.mp3">
+        <span class="num">30</span>
+        <span class="en">proficiency</span>
+        <span class="ko">숙달, 능숙함</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

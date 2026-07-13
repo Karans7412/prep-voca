@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 35</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 35</div>
+  <div class="theme">교육·학습·지식</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch35/inquiry.mp3">
+        <span class="num">01</span>
+        <span class="en">inquiry</span>
+        <span class="ko">질문, 탐구, 조사</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/internalize.mp3">
+        <span class="num">02</span>
+        <span class="en">internalize</span>
+        <span class="ko">내면화하다, 자기 것으로 만들다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/mastery.mp3">
+        <span class="num">03</span>
+        <span class="en">mastery</span>
+        <span class="ko">숙달, 정통</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/mathematics.mp3">
+        <span class="num">04</span>
+        <span class="en">mathematics</span>
+        <span class="ko">수학</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/mentor.mp3">
+        <span class="num">05</span>
+        <span class="en">mentor</span>
+        <span class="ko">멘토, 조언자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/numeracy.mp3">
+        <span class="num">06</span>
+        <span class="en">numeracy</span>
+        <span class="ko">산술 능력, 수리력</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/pedagogical.mp3">
+        <span class="num">07</span>
+        <span class="en">pedagogical</span>
+        <span class="ko">교육(학)적인, 교수법의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/pedagogy.mp3">
+        <span class="num">08</span>
+        <span class="en">pedagogy</span>
+        <span class="ko">교육학, 교수법</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/philosopher.mp3">
+        <span class="num">09</span>
+        <span class="en">philosopher</span>
+        <span class="ko">철학자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/physics.mp3">
+        <span class="num">10</span>
+        <span class="en">physics</span>
+        <span class="ko">물리학</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/proficient.mp3">
+        <span class="num">11</span>
+        <span class="en">proficient</span>
+        <span class="ko">능숙한, 숙달된</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/recite.mp3">
+        <span class="num">12</span>
+        <span class="en">recite</span>
+        <span class="ko">암송하다, 낭독하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/rote.mp3">
+        <span class="num">13</span>
+        <span class="en">rote</span>
+        <span class="ko">기계적 암기, 무작정 외우기</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/semester.mp3">
+        <span class="num">14</span>
+        <span class="en">semester</span>
+        <span class="ko">학기</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/seminar.mp3">
+        <span class="num">15</span>
+        <span class="en">seminar</span>
+        <span class="ko">세미나, 토론 수업</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/skillful.mp3">
+        <span class="num">16</span>
+        <span class="en">skillful</span>
+        <span class="ko">솜씨 좋은, 능숙한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/syllabus.mp3">
+        <span class="num">17</span>
+        <span class="en">syllabus</span>
+        <span class="ko">강의 계획서, 교수 요목</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/tuition.mp3">
+        <span class="num">18</span>
+        <span class="en">tuition</span>
+        <span class="ko">수업, 교습, 등록금</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/tutorial.mp3">
+        <span class="num">19</span>
+        <span class="en">tutorial</span>
+        <span class="ko">개별 지도, 지침 설명</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch35/undergraduate.mp3">
+        <span class="num">20</span>
+        <span class="en">undergraduate</span>
+        <span class="ko">학부생, 대학생</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

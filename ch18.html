@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PREP English VOCA &middot; Chapter 18</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #faf9f7; color: #1a1a1a; padding-bottom: 40px; }
+  header { text-align: center; padding: 28px 16px 18px; border-bottom: 2px solid #1a1a1a; background: #fff; }
+  .logo { font-family: Georgia, serif; font-size: 34px; letter-spacing: 6px; font-weight: bold; }
+  .logo small { display: block; font-size: 13px; letter-spacing: 3px; font-style: italic; font-weight: normal; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #555; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #1a1a1a; background: #1a1a1a; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #1a1a1a; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #ddd; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #1a1a1a; background: #f0ede8; }
+  .num { font-size: 12px; color: #aaa; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #1a1a1a; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #aaa; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#555; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 18</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch18/except.mp3">
+        <span class="num">01</span>
+        <span class="en">except</span>
+        <span class="ko">~을 제외하고</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/although.mp3">
+        <span class="num">02</span>
+        <span class="en">although</span>
+        <span class="ko">비록 ~일지라도</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/honestly.mp3">
+        <span class="num">03</span>
+        <span class="en">honestly</span>
+        <span class="ko">정직하게</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/succeed.mp3">
+        <span class="num">04</span>
+        <span class="en">succeed</span>
+        <span class="ko">성공하다, 계승하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/rainforest.mp3">
+        <span class="num">05</span>
+        <span class="en">rainforest</span>
+        <span class="ko">(열대) 우림</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/reasonable.mp3">
+        <span class="num">06</span>
+        <span class="en">reasonable</span>
+        <span class="ko">타당한, 합리적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/block.mp3">
+        <span class="num">07</span>
+        <span class="en">block</span>
+        <span class="ko">막다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/beggar.mp3">
+        <span class="num">08</span>
+        <span class="en">beggar</span>
+        <span class="ko">거지</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/lie.mp3">
+        <span class="num">09</span>
+        <span class="en">lie</span>
+        <span class="ko">눕다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/chain.mp3">
+        <span class="num">10</span>
+        <span class="en">chain</span>
+        <span class="ko">사슬, 체인, 묶다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/disappear.mp3">
+        <span class="num">11</span>
+        <span class="en">disappear</span>
+        <span class="ko">사라지다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/traditional.mp3">
+        <span class="num">12</span>
+        <span class="en">traditional</span>
+        <span class="ko">전통적인, 전통의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/grain.mp3">
+        <span class="num">13</span>
+        <span class="en">grain</span>
+        <span class="ko">곡물, 알갱이</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/pile.mp3">
+        <span class="num">14</span>
+        <span class="en">pile</span>
+        <span class="ko">더미, 쌓다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/discount.mp3">
+        <span class="num">15</span>
+        <span class="en">discount</span>
+        <span class="ko">할인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/acne.mp3">
+        <span class="num">16</span>
+        <span class="en">acne</span>
+        <span class="ko">여드름</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/prevent.mp3">
+        <span class="num">17</span>
+        <span class="en">prevent</span>
+        <span class="ko">막다, 방지하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/error.mp3">
+        <span class="num">18</span>
+        <span class="en">error</span>
+        <span class="ko">오류, 실수</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/least.mp3">
+        <span class="num">19</span>
+        <span class="en">least</span>
+        <span class="ko">가장 작은</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/landscape.mp3">
+        <span class="num">20</span>
+        <span class="en">landscape</span>
+        <span class="ko">풍경</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/steel.mp3">
+        <span class="num">21</span>
+        <span class="en">steel</span>
+        <span class="ko">강철, 철</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/current.mp3">
+        <span class="num">22</span>
+        <span class="en">current</span>
+        <span class="ko">현재의, 지금의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/resource.mp3">
+        <span class="num">23</span>
+        <span class="en">resource</span>
+        <span class="ko">자원</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/face.mp3">
+        <span class="num">24</span>
+        <span class="en">face</span>
+        <span class="ko">~을 마주보다, 직면하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/submarine.mp3">
+        <span class="num">25</span>
+        <span class="en">submarine</span>
+        <span class="ko">잠수함, 해저의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/structure.mp3">
+        <span class="num">26</span>
+        <span class="en">structure</span>
+        <span class="ko">구조, 구조물</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/bronze.mp3">
+        <span class="num">27</span>
+        <span class="en">bronze</span>
+        <span class="ko">청동</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/harbor.mp3">
+        <span class="num">28</span>
+        <span class="en">harbor</span>
+        <span class="ko">항구</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/species.mp3">
+        <span class="num">29</span>
+        <span class="en">species</span>
+        <span class="ko">종</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch18/doubt.mp3">
+        <span class="num">30</span>
+        <span class="en">doubt</span>
+        <span class="ko">의심하다, 의심</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='audio/intro.mp3', OUTRO='audio/outro.mp3', GREET='audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

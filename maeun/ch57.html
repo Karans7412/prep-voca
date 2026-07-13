@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 57</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 57</div>
+  <div class="theme">신체·건강·의학</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch57/absorb.mp3">
+        <span class="num">01</span>
+        <span class="en">absorb</span>
+        <span class="ko">흡수하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/beneficial.mp3">
+        <span class="num">02</span>
+        <span class="en">beneficial</span>
+        <span class="ko">유익한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/bone.mp3">
+        <span class="num">03</span>
+        <span class="en">bone</span>
+        <span class="ko">뼈</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/brain.mp3">
+        <span class="num">04</span>
+        <span class="en">brain</span>
+        <span class="ko">뇌, 두뇌</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/cancer.mp3">
+        <span class="num">05</span>
+        <span class="en">cancer</span>
+        <span class="ko">암</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/cure.mp3">
+        <span class="num">06</span>
+        <span class="en">cure</span>
+        <span class="ko">치료하다, 치료법</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/diet.mp3">
+        <span class="num">07</span>
+        <span class="en">diet</span>
+        <span class="ko">식습관, 식이요법</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/disease.mp3">
+        <span class="num">08</span>
+        <span class="en">disease</span>
+        <span class="ko">질병</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/disorder.mp3">
+        <span class="num">09</span>
+        <span class="en">disorder</span>
+        <span class="ko">장애, 이상</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/emergency.mp3">
+        <span class="num">10</span>
+        <span class="en">emergency</span>
+        <span class="ko">응급, 비상사태</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/heal.mp3">
+        <span class="num">11</span>
+        <span class="en">heal</span>
+        <span class="ko">낫게 하다, 치유되다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/healthy.mp3">
+        <span class="num">12</span>
+        <span class="en">healthy</span>
+        <span class="ko">건강한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/illness.mp3">
+        <span class="num">13</span>
+        <span class="en">illness</span>
+        <span class="ko">병, 질환</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/immune.mp3">
+        <span class="num">14</span>
+        <span class="en">immune</span>
+        <span class="ko">면역의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/infection.mp3">
+        <span class="num">15</span>
+        <span class="en">infection</span>
+        <span class="ko">감염</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/injury.mp3">
+        <span class="num">16</span>
+        <span class="en">injury</span>
+        <span class="ko">부상, 상해</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/prevent.mp3">
+        <span class="num">17</span>
+        <span class="en">prevent</span>
+        <span class="ko">예방하다, 막다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/protein.mp3">
+        <span class="num">18</span>
+        <span class="en">protein</span>
+        <span class="ko">단백질</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/recovery.mp3">
+        <span class="num">19</span>
+        <span class="en">recovery</span>
+        <span class="ko">회복</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/resist.mp3">
+        <span class="num">20</span>
+        <span class="en">resist</span>
+        <span class="ko">저항하다, 견디다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/resistance.mp3">
+        <span class="num">21</span>
+        <span class="en">resistance</span>
+        <span class="ko">저항, 저항력</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/severe.mp3">
+        <span class="num">22</span>
+        <span class="en">severe</span>
+        <span class="ko">심한, 극심한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/spread.mp3">
+        <span class="num">23</span>
+        <span class="en">spread</span>
+        <span class="ko">퍼지다, 확산되다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/strength.mp3">
+        <span class="num">24</span>
+        <span class="en">strength</span>
+        <span class="ko">힘, 강점</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/surgery.mp3">
+        <span class="num">25</span>
+        <span class="en">surgery</span>
+        <span class="ko">수술</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/symptom.mp3">
+        <span class="num">26</span>
+        <span class="en">symptom</span>
+        <span class="ko">증상, 징후</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/therapy.mp3">
+        <span class="num">27</span>
+        <span class="en">therapy</span>
+        <span class="ko">치료, 요법</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/treat.mp3">
+        <span class="num">28</span>
+        <span class="en">treat</span>
+        <span class="ko">치료하다, 대하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/treatment.mp3">
+        <span class="num">29</span>
+        <span class="en">treatment</span>
+        <span class="ko">치료, 처치</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch57/vaccine.mp3">
+        <span class="num">30</span>
+        <span class="en">vaccine</span>
+        <span class="ko">백신</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

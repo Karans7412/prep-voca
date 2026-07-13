@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 70</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 70</div>
+  <div class="theme">사회·정치·법</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch70/security.mp3">
+        <span class="num">01</span>
+        <span class="en">security</span>
+        <span class="ko">안보, 보안, 안전</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/society.mp3">
+        <span class="num">02</span>
+        <span class="en">society</span>
+        <span class="ko">사회</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/vote.mp3">
+        <span class="num">03</span>
+        <span class="en">vote</span>
+        <span class="ko">투표하다, 표</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/war.mp3">
+        <span class="num">04</span>
+        <span class="en">war</span>
+        <span class="ko">전쟁</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/accountable.mp3">
+        <span class="num">05</span>
+        <span class="en">accountable</span>
+        <span class="ko">책임이 있는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/accuse.mp3">
+        <span class="num">06</span>
+        <span class="en">accuse</span>
+        <span class="ko">고발하다, 비난하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/administration.mp3">
+        <span class="num">07</span>
+        <span class="en">administration</span>
+        <span class="ko">행정, 정부, 관리</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/amendment.mp3">
+        <span class="num">08</span>
+        <span class="en">amendment</span>
+        <span class="ko">개정, 수정 조항</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/ballot.mp3">
+        <span class="num">09</span>
+        <span class="en">ballot</span>
+        <span class="ko">투표용지, 무기명 투표</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/ban.mp3">
+        <span class="num">10</span>
+        <span class="en">ban</span>
+        <span class="ko">금지하다, 금지령</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/candidate.mp3">
+        <span class="num">11</span>
+        <span class="en">candidate</span>
+        <span class="ko">후보자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/civic.mp3">
+        <span class="num">12</span>
+        <span class="en">civic</span>
+        <span class="ko">시민의, 도시의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/constituent.mp3">
+        <span class="num">13</span>
+        <span class="en">constituent</span>
+        <span class="ko">유권자, 구성 요소</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/corruption.mp3">
+        <span class="num">14</span>
+        <span class="en">corruption</span>
+        <span class="ko">부패, 타락</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/criminal.mp3">
+        <span class="num">15</span>
+        <span class="en">criminal</span>
+        <span class="ko">범죄의, 범죄자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/defend.mp3">
+        <span class="num">16</span>
+        <span class="en">defend</span>
+        <span class="ko">방어하다, 변호하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/defendant.mp3">
+        <span class="num">17</span>
+        <span class="en">defendant</span>
+        <span class="ko">피고</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/defense.mp3">
+        <span class="num">18</span>
+        <span class="en">defense</span>
+        <span class="ko">방어, 변호, 국방</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/delegate.mp3">
+        <span class="num">19</span>
+        <span class="en">delegate</span>
+        <span class="ko">대표, 위임하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/democracy.mp3">
+        <span class="num">20</span>
+        <span class="en">democracy</span>
+        <span class="ko">민주주의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/democratic.mp3">
+        <span class="num">21</span>
+        <span class="en">democratic</span>
+        <span class="ko">민주적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/dissent.mp3">
+        <span class="num">22</span>
+        <span class="en">dissent</span>
+        <span class="ko">반대, 이의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/duty.mp3">
+        <span class="num">23</span>
+        <span class="en">duty</span>
+        <span class="ko">의무, 임무</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/elect.mp3">
+        <span class="num">24</span>
+        <span class="en">elect</span>
+        <span class="ko">선출하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/election.mp3">
+        <span class="num">25</span>
+        <span class="en">election</span>
+        <span class="ko">선거</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/enact.mp3">
+        <span class="num">26</span>
+        <span class="en">enact</span>
+        <span class="ko">(법을) 제정하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/enforce.mp3">
+        <span class="num">27</span>
+        <span class="en">enforce</span>
+        <span class="ko">집행하다, 시행하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/equality.mp3">
+        <span class="num">28</span>
+        <span class="en">equality</span>
+        <span class="ko">평등</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/foundation.mp3">
+        <span class="num">29</span>
+        <span class="en">foundation</span>
+        <span class="ko">재단, 토대</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch70/govern.mp3">
+        <span class="num">30</span>
+        <span class="en">govern</span>
+        <span class="ko">통치하다, 다스리다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 36</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 36</div>
+  <div class="theme">과학·연구·실험</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch36/accurate.mp3">
+        <span class="num">01</span>
+        <span class="en">accurate</span>
+        <span class="ko">정확한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/advance.mp3">
+        <span class="num">02</span>
+        <span class="en">advance</span>
+        <span class="ko">발전; 발전시키다, 나아가다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/approach.mp3">
+        <span class="num">03</span>
+        <span class="en">approach</span>
+        <span class="ko">접근법; 접근하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/average.mp3">
+        <span class="num">04</span>
+        <span class="en">average</span>
+        <span class="ko">평균; 평균의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/cause.mp3">
+        <span class="num">05</span>
+        <span class="en">cause</span>
+        <span class="ko">원인; 야기하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/cell.mp3">
+        <span class="num">06</span>
+        <span class="en">cell</span>
+        <span class="ko">세포</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/chemical.mp3">
+        <span class="num">07</span>
+        <span class="en">chemical</span>
+        <span class="ko">화학의; 화학 물질</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/complex.mp3">
+        <span class="num">08</span>
+        <span class="en">complex</span>
+        <span class="ko">복잡한; 복합체</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/consequence.mp3">
+        <span class="num">09</span>
+        <span class="en">consequence</span>
+        <span class="ko">결과, 영향</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/device.mp3">
+        <span class="num">10</span>
+        <span class="en">device</span>
+        <span class="ko">장치, 기기</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/effect.mp3">
+        <span class="num">11</span>
+        <span class="en">effect</span>
+        <span class="ko">효과, 영향, 결과</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/element.mp3">
+        <span class="num">12</span>
+        <span class="en">element</span>
+        <span class="ko">요소, 원소</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/energy.mp3">
+        <span class="num">13</span>
+        <span class="en">energy</span>
+        <span class="ko">에너지, 기운</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/factor.mp3">
+        <span class="num">14</span>
+        <span class="en">factor</span>
+        <span class="ko">요인, 인자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/field.mp3">
+        <span class="num">15</span>
+        <span class="en">field</span>
+        <span class="ko">분야, 들판</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/function.mp3">
+        <span class="num">16</span>
+        <span class="en">function</span>
+        <span class="ko">기능; 기능하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/generate.mp3">
+        <span class="num">17</span>
+        <span class="en">generate</span>
+        <span class="ko">만들어내다, 발생시키다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/impact.mp3">
+        <span class="num">18</span>
+        <span class="en">impact</span>
+        <span class="ko">영향, 충격; 영향을 주다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/measure.mp3">
+        <span class="num">19</span>
+        <span class="en">measure</span>
+        <span class="ko">측정하다; 수단, 조치</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/method.mp3">
+        <span class="num">20</span>
+        <span class="en">method</span>
+        <span class="ko">방법, 방식</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/outcome.mp3">
+        <span class="num">21</span>
+        <span class="en">outcome</span>
+        <span class="ko">결과, 성과</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/pattern.mp3">
+        <span class="num">22</span>
+        <span class="en">pattern</span>
+        <span class="ko">패턴, 양식, 무늬</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/physical.mp3">
+        <span class="num">23</span>
+        <span class="en">physical</span>
+        <span class="ko">물리적인, 신체의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/process.mp3">
+        <span class="num">24</span>
+        <span class="en">process</span>
+        <span class="ko">과정, 절차; 처리하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/produce.mp3">
+        <span class="num">25</span>
+        <span class="en">produce</span>
+        <span class="ko">생산하다, 만들어내다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/rate.mp3">
+        <span class="num">26</span>
+        <span class="en">rate</span>
+        <span class="ko">비율, 속도; 평가하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/relevant.mp3">
+        <span class="num">27</span>
+        <span class="en">relevant</span>
+        <span class="ko">관련 있는, 적절한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/researcher.mp3">
+        <span class="num">28</span>
+        <span class="en">researcher</span>
+        <span class="ko">연구자, 연구원</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/result.mp3">
+        <span class="num">29</span>
+        <span class="en">result</span>
+        <span class="ko">결과; 결과로 생기다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch36/scale.mp3">
+        <span class="num">30</span>
+        <span class="en">scale</span>
+        <span class="ko">규모, 척도; 저울</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

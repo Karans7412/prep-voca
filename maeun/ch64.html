@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 64</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 64</div>
+  <div class="theme">경제·소비·비즈니스</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch64/price.mp3">
+        <span class="num">01</span>
+        <span class="en">price</span>
+        <span class="ko">가격, 값, 대가</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/product.mp3">
+        <span class="num">02</span>
+        <span class="en">product</span>
+        <span class="ko">제품, 상품, 결과물</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/professional.mp3">
+        <span class="num">03</span>
+        <span class="en">professional</span>
+        <span class="ko">전문의, 전문가</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/profit.mp3">
+        <span class="num">04</span>
+        <span class="en">profit</span>
+        <span class="ko">이익, 수익, 이득을 얻다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/property.mp3">
+        <span class="num">05</span>
+        <span class="en">property</span>
+        <span class="ko">재산, 부동산, 속성</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/purchase.mp3">
+        <span class="num">06</span>
+        <span class="en">purchase</span>
+        <span class="ko">구매, 구입하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/reward.mp3">
+        <span class="num">07</span>
+        <span class="en">reward</span>
+        <span class="ko">보상, 보상하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/strategy.mp3">
+        <span class="num">08</span>
+        <span class="en">strategy</span>
+        <span class="ko">전략, 계획</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/supply.mp3">
+        <span class="num">09</span>
+        <span class="en">supply</span>
+        <span class="ko">공급, 공급하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/trade.mp3">
+        <span class="num">10</span>
+        <span class="en">trade</span>
+        <span class="ko">무역, 거래, 거래하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/transaction.mp3">
+        <span class="num">11</span>
+        <span class="en">transaction</span>
+        <span class="ko">거래, 매매</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/valuable.mp3">
+        <span class="num">12</span>
+        <span class="en">valuable</span>
+        <span class="ko">귀중한, 값진</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/value.mp3">
+        <span class="num">13</span>
+        <span class="en">value</span>
+        <span class="ko">가치, 가치를 두다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/wealth.mp3">
+        <span class="num">14</span>
+        <span class="en">wealth</span>
+        <span class="ko">부, 재산, 풍부함</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/worth.mp3">
+        <span class="num">15</span>
+        <span class="en">worth</span>
+        <span class="ko">~의 가치가 있는, 가치</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/advertise.mp3">
+        <span class="num">16</span>
+        <span class="en">advertise</span>
+        <span class="ko">광고하다, 선전하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/advertisement.mp3">
+        <span class="num">17</span>
+        <span class="en">advertisement</span>
+        <span class="ko">광고</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/affluent.mp3">
+        <span class="num">18</span>
+        <span class="en">affluent</span>
+        <span class="ko">부유한, 풍족한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/asset.mp3">
+        <span class="num">19</span>
+        <span class="en">asset</span>
+        <span class="ko">자산, 재산, 유용한 것</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/auction.mp3">
+        <span class="num">20</span>
+        <span class="en">auction</span>
+        <span class="ko">경매</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/bid.mp3">
+        <span class="num">21</span>
+        <span class="en">bid</span>
+        <span class="ko">입찰하다, 값을 부르다; 입찰</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/brand.mp3">
+        <span class="num">22</span>
+        <span class="en">brand</span>
+        <span class="ko">상표, 브랜드, 낙인찍다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/budget.mp3">
+        <span class="num">23</span>
+        <span class="en">budget</span>
+        <span class="ko">예산, 예산을 세우다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/capital.mp3">
+        <span class="num">24</span>
+        <span class="en">capital</span>
+        <span class="ko">자본, 수도, 대문자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/capitalism.mp3">
+        <span class="num">25</span>
+        <span class="en">capitalism</span>
+        <span class="ko">자본주의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/cash.mp3">
+        <span class="num">26</span>
+        <span class="en">cash</span>
+        <span class="ko">현금</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/client.mp3">
+        <span class="num">27</span>
+        <span class="en">client</span>
+        <span class="ko">고객, 의뢰인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/commerce.mp3">
+        <span class="num">28</span>
+        <span class="en">commerce</span>
+        <span class="ko">상업, 무역</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/commercial.mp3">
+        <span class="num">29</span>
+        <span class="en">commercial</span>
+        <span class="ko">상업의, 광고 방송</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch64/commodity.mp3">
+        <span class="num">30</span>
+        <span class="en">commodity</span>
+        <span class="ko">상품, 원자재</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

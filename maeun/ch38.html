@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 38</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 38</div>
+  <div class="theme">과학·연구·실험</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch38/gauge.mp3">
+        <span class="num">01</span>
+        <span class="en">gauge</span>
+        <span class="ko">측정하다, 판단하다; 계기</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/gene.mp3">
+        <span class="num">02</span>
+        <span class="en">gene</span>
+        <span class="ko">유전자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/genetic.mp3">
+        <span class="num">03</span>
+        <span class="en">genetic</span>
+        <span class="ko">유전의, 유전적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/genome.mp3">
+        <span class="num">04</span>
+        <span class="en">genome</span>
+        <span class="ko">게놈, 유전체</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/gravity.mp3">
+        <span class="num">05</span>
+        <span class="en">gravity</span>
+        <span class="ko">중력</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/innovation.mp3">
+        <span class="num">06</span>
+        <span class="en">innovation</span>
+        <span class="ko">혁신</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/instrument.mp3">
+        <span class="num">07</span>
+        <span class="en">instrument</span>
+        <span class="ko">기구, 도구, 악기</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/invent.mp3">
+        <span class="num">08</span>
+        <span class="en">invent</span>
+        <span class="ko">발명하다, 지어내다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/invention.mp3">
+        <span class="num">09</span>
+        <span class="en">invention</span>
+        <span class="ko">발명, 발명품</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/laboratory.mp3">
+        <span class="num">10</span>
+        <span class="en">laboratory</span>
+        <span class="ko">실험실, 연구소</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/likelihood.mp3">
+        <span class="num">11</span>
+        <span class="en">likelihood</span>
+        <span class="ko">가능성, 있음직함</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/magnify.mp3">
+        <span class="num">12</span>
+        <span class="en">magnify</span>
+        <span class="ko">확대하다, 과장하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/mass.mp3">
+        <span class="num">13</span>
+        <span class="en">mass</span>
+        <span class="ko">질량, 덩어리, 대중</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/measurement.mp3">
+        <span class="num">14</span>
+        <span class="en">measurement</span>
+        <span class="ko">측정, 치수</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/mechanism.mp3">
+        <span class="num">15</span>
+        <span class="en">mechanism</span>
+        <span class="ko">기제, 구조, 메커니즘</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/molecular.mp3">
+        <span class="num">16</span>
+        <span class="en">molecular</span>
+        <span class="ko">분자의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/molecule.mp3">
+        <span class="num">17</span>
+        <span class="en">molecule</span>
+        <span class="ko">분자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/nucleus.mp3">
+        <span class="num">18</span>
+        <span class="en">nucleus</span>
+        <span class="ko">(원자·세포의) 핵, 중심</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/organism.mp3">
+        <span class="num">19</span>
+        <span class="en">organism</span>
+        <span class="ko">유기체, 생물</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/particle.mp3">
+        <span class="num">20</span>
+        <span class="en">particle</span>
+        <span class="ko">입자, 미립자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/phenomenon.mp3">
+        <span class="num">21</span>
+        <span class="en">phenomenon</span>
+        <span class="ko">현상</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/plausible.mp3">
+        <span class="num">22</span>
+        <span class="en">plausible</span>
+        <span class="ko">그럴듯한, 타당해 보이는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/precise.mp3">
+        <span class="num">23</span>
+        <span class="en">precise</span>
+        <span class="ko">정밀한, 정확한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/probability.mp3">
+        <span class="num">24</span>
+        <span class="en">probability</span>
+        <span class="ko">확률, 개연성</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/probe.mp3">
+        <span class="num">25</span>
+        <span class="en">probe</span>
+        <span class="ko">조사하다, 탐사하다; 탐사기</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/procedure.mp3">
+        <span class="num">26</span>
+        <span class="en">procedure</span>
+        <span class="ko">절차, 과정</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/proof.mp3">
+        <span class="num">27</span>
+        <span class="en">proof</span>
+        <span class="ko">증거, 증명</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/proportion.mp3">
+        <span class="num">28</span>
+        <span class="en">proportion</span>
+        <span class="ko">비율, 부분, 균형</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/quantify.mp3">
+        <span class="num">29</span>
+        <span class="en">quantify</span>
+        <span class="ko">수량화하다, 정량화하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch38/quantity.mp3">
+        <span class="num">30</span>
+        <span class="en">quantity</span>
+        <span class="ko">양, 수량</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

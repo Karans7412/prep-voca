@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 23</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 23</div>
+  <div class="theme">인간관계·상호작용</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch23/debate.mp3">
+        <span class="num">01</span>
+        <span class="en">debate</span>
+        <span class="ko">토론, 논쟁하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/dependence.mp3">
+        <span class="num">02</span>
+        <span class="en">dependence</span>
+        <span class="ko">의존, 의지</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/devote.mp3">
+        <span class="num">03</span>
+        <span class="en">devote</span>
+        <span class="ko">바치다, 헌신하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/disagreement.mp3">
+        <span class="num">04</span>
+        <span class="en">disagreement</span>
+        <span class="ko">의견 차이, 불일치</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/discrimination.mp3">
+        <span class="num">05</span>
+        <span class="en">discrimination</span>
+        <span class="ko">차별, 구별</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/dispute.mp3">
+        <span class="num">06</span>
+        <span class="en">dispute</span>
+        <span class="ko">분쟁, 논쟁, 반박하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/donate.mp3">
+        <span class="num">07</span>
+        <span class="en">donate</span>
+        <span class="ko">기부하다, 기증하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/embrace.mp3">
+        <span class="num">08</span>
+        <span class="en">embrace</span>
+        <span class="ko">받아들이다, 껴안다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/encouragement.mp3">
+        <span class="num">09</span>
+        <span class="en">encouragement</span>
+        <span class="ko">격려, 장려</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/engagement.mp3">
+        <span class="num">10</span>
+        <span class="en">engagement</span>
+        <span class="ko">참여, 약속, 관여</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/exclude.mp3">
+        <span class="num">11</span>
+        <span class="en">exclude</span>
+        <span class="ko">제외하다, 배제하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/favor.mp3">
+        <span class="num">12</span>
+        <span class="en">favor</span>
+        <span class="ko">호의, 부탁, 편들다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/favorable.mp3">
+        <span class="num">13</span>
+        <span class="en">favorable</span>
+        <span class="ko">호의적인, 유리한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/forgive.mp3">
+        <span class="num">14</span>
+        <span class="en">forgive</span>
+        <span class="ko">용서하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/friction.mp3">
+        <span class="num">15</span>
+        <span class="en">friction</span>
+        <span class="ko">마찰, 불화, 갈등</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/friendship.mp3">
+        <span class="num">16</span>
+        <span class="en">friendship</span>
+        <span class="ko">우정, 친분</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/gathering.mp3">
+        <span class="num">17</span>
+        <span class="en">gathering</span>
+        <span class="ko">모임, 집회</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/gesture.mp3">
+        <span class="num">18</span>
+        <span class="en">gesture</span>
+        <span class="ko">몸짓, 제스처</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/greet.mp3">
+        <span class="num">19</span>
+        <span class="en">greet</span>
+        <span class="ko">인사하다, 맞이하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/greeting.mp3">
+        <span class="num">20</span>
+        <span class="en">greeting</span>
+        <span class="ko">인사, 인사말</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/harmony.mp3">
+        <span class="num">21</span>
+        <span class="en">harmony</span>
+        <span class="ko">조화, 화합</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/impression.mp3">
+        <span class="num">22</span>
+        <span class="en">impression</span>
+        <span class="ko">인상, 감명</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/influential.mp3">
+        <span class="num">23</span>
+        <span class="en">influential</span>
+        <span class="ko">영향력 있는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/integrate.mp3">
+        <span class="num">24</span>
+        <span class="en">integrate</span>
+        <span class="ko">통합하다, 융화되다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/interdependence.mp3">
+        <span class="num">25</span>
+        <span class="en">interdependence</span>
+        <span class="ko">상호의존</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/interdependent.mp3">
+        <span class="num">26</span>
+        <span class="en">interdependent</span>
+        <span class="ko">상호의존적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/interpersonal.mp3">
+        <span class="num">27</span>
+        <span class="en">interpersonal</span>
+        <span class="ko">대인관계의, 사람 사이의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/intimacy.mp3">
+        <span class="num">28</span>
+        <span class="en">intimacy</span>
+        <span class="ko">친밀함, 가까움</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/involvement.mp3">
+        <span class="num">29</span>
+        <span class="en">involvement</span>
+        <span class="ko">관여, 참여, 연루</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch23/isolate.mp3">
+        <span class="num">30</span>
+        <span class="en">isolate</span>
+        <span class="ko">고립시키다, 격리하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>
