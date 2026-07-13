@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 82</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 82</div>
+  <div class="theme">역사·문명·전통</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch82/clergy.mp3">
+        <span class="num">01</span>
+        <span class="en">clergy</span>
+        <span class="ko">성직자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/colonize.mp3">
+        <span class="num">02</span>
+        <span class="en">colonize</span>
+        <span class="ko">식민지로 삼다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/commemorate.mp3">
+        <span class="num">03</span>
+        <span class="en">commemorate</span>
+        <span class="ko">기념하다, 추모하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/congregation.mp3">
+        <span class="num">04</span>
+        <span class="en">congregation</span>
+        <span class="ko">신도, 회중</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/conquest.mp3">
+        <span class="num">05</span>
+        <span class="en">conquest</span>
+        <span class="ko">정복</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/coronation.mp3">
+        <span class="num">06</span>
+        <span class="en">coronation</span>
+        <span class="ko">대관식</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/deity.mp3">
+        <span class="num">07</span>
+        <span class="en">deity</span>
+        <span class="ko">신</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/doctrine.mp3">
+        <span class="num">08</span>
+        <span class="en">doctrine</span>
+        <span class="ko">교리, 신조</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/dynastic.mp3">
+        <span class="num">09</span>
+        <span class="en">dynastic</span>
+        <span class="ko">왕조의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/enlightenment.mp3">
+        <span class="num">10</span>
+        <span class="en">enlightenment</span>
+        <span class="ko">계몽, 깨달음</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/excavate.mp3">
+        <span class="num">11</span>
+        <span class="en">excavate</span>
+        <span class="ko">발굴하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/excavation.mp3">
+        <span class="num">12</span>
+        <span class="en">excavation</span>
+        <span class="ko">발굴</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/feast.mp3">
+        <span class="num">13</span>
+        <span class="en">feast</span>
+        <span class="ko">잔치, 축제</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/feudal.mp3">
+        <span class="num">14</span>
+        <span class="en">feudal</span>
+        <span class="ko">봉건적인, 봉건 제도의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/folklore.mp3">
+        <span class="num">15</span>
+        <span class="en">folklore</span>
+        <span class="ko">민속, 전승</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/fortress.mp3">
+        <span class="num">16</span>
+        <span class="en">fortress</span>
+        <span class="ko">요새, 성채</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/gospel.mp3">
+        <span class="num">17</span>
+        <span class="en">gospel</span>
+        <span class="ko">복음</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/heir.mp3">
+        <span class="num">18</span>
+        <span class="en">heir</span>
+        <span class="ko">상속인, 후계자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/idol.mp3">
+        <span class="num">19</span>
+        <span class="en">idol</span>
+        <span class="ko">우상, 숭배 대상</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/imperial.mp3">
+        <span class="num">20</span>
+        <span class="en">imperial</span>
+        <span class="ko">제국의, 황제의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/imperialism.mp3">
+        <span class="num">21</span>
+        <span class="en">imperialism</span>
+        <span class="ko">제국주의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/inscription.mp3">
+        <span class="num">22</span>
+        <span class="en">inscription</span>
+        <span class="ko">비문, 새겨진 글</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/knight.mp3">
+        <span class="num">23</span>
+        <span class="en">knight</span>
+        <span class="ko">기사</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/liberate.mp3">
+        <span class="num">24</span>
+        <span class="en">liberate</span>
+        <span class="ko">해방시키다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/liberation.mp3">
+        <span class="num">25</span>
+        <span class="en">liberation</span>
+        <span class="ko">해방</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/millennium.mp3">
+        <span class="num">26</span>
+        <span class="en">millennium</span>
+        <span class="ko">천년</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/missionary.mp3">
+        <span class="num">27</span>
+        <span class="en">missionary</span>
+        <span class="ko">선교사, 선교의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/monastery.mp3">
+        <span class="num">28</span>
+        <span class="en">monastery</span>
+        <span class="ko">수도원</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/monumental.mp3">
+        <span class="num">29</span>
+        <span class="en">monumental</span>
+        <span class="ko">기념비적인, 엄청난</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch82/nobility.mp3">
+        <span class="num">30</span>
+        <span class="en">nobility</span>
+        <span class="ko">귀족, 고귀함</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

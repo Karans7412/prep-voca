@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 87</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 87</div>
+  <div class="theme">시간·변화·인과</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch87/advancement.mp3">
+        <span class="num">01</span>
+        <span class="en">advancement</span>
+        <span class="ko">발전, 진보</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/aftermath.mp3">
+        <span class="num">02</span>
+        <span class="en">aftermath</span>
+        <span class="ko">여파, 후유증</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/alteration.mp3">
+        <span class="num">03</span>
+        <span class="en">alteration</span>
+        <span class="ko">변경, 개조</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/chain%20reaction.mp3">
+        <span class="num">04</span>
+        <span class="en">chain reaction</span>
+        <span class="ko">연쇄 반응</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/commence.mp3">
+        <span class="num">05</span>
+        <span class="en">commence</span>
+        <span class="ko">시작하다, 착수하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/culminate.mp3">
+        <span class="num">06</span>
+        <span class="en">culminate</span>
+        <span class="ko">정점에 이르다, 끝내 ~이 되다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/cumulative.mp3">
+        <span class="num">07</span>
+        <span class="en">cumulative</span>
+        <span class="ko">누적되는, 점증하는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/deteriorate.mp3">
+        <span class="num">08</span>
+        <span class="en">deteriorate</span>
+        <span class="ko">악화되다, 나빠지다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/drastic.mp3">
+        <span class="num">09</span>
+        <span class="en">drastic</span>
+        <span class="ko">급격한, 과감한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/dwindle.mp3">
+        <span class="num">10</span>
+        <span class="en">dwindle</span>
+        <span class="ko">점점 줄어들다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/emergence.mp3">
+        <span class="num">11</span>
+        <span class="en">emergence</span>
+        <span class="ko">출현, 등장</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/enhancement.mp3">
+        <span class="num">12</span>
+        <span class="en">enhancement</span>
+        <span class="ko">향상, 강화</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/ensue.mp3">
+        <span class="num">13</span>
+        <span class="en">ensue</span>
+        <span class="ko">뒤따라 일어나다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/epoch.mp3">
+        <span class="num">14</span>
+        <span class="en">epoch</span>
+        <span class="ko">시대, 신기원</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/eternal.mp3">
+        <span class="num">15</span>
+        <span class="en">eternal</span>
+        <span class="ko">영원한, 끝없는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/fleeting.mp3">
+        <span class="num">16</span>
+        <span class="en">fleeting</span>
+        <span class="ko">순식간의, 잠깐의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/forecast.mp3">
+        <span class="num">17</span>
+        <span class="en">forecast</span>
+        <span class="ko">예측하다; 예보</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/hasten.mp3">
+        <span class="num">18</span>
+        <span class="en">hasten</span>
+        <span class="ko">재촉하다, 서두르다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/inevitably.mp3">
+        <span class="num">19</span>
+        <span class="en">inevitably</span>
+        <span class="ko">불가피하게, 필연적으로</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/initiate.mp3">
+        <span class="num">20</span>
+        <span class="en">initiate</span>
+        <span class="ko">시작하다, 착수하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/interval.mp3">
+        <span class="num">21</span>
+        <span class="en">interval</span>
+        <span class="ko">간격, 사이</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/maturity.mp3">
+        <span class="num">22</span>
+        <span class="en">maturity</span>
+        <span class="ko">성숙, 완성</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/milestone.mp3">
+        <span class="num">23</span>
+        <span class="en">milestone</span>
+        <span class="ko">중요한 시점, 이정표</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/modification.mp3">
+        <span class="num">24</span>
+        <span class="en">modification</span>
+        <span class="ko">수정, 변경</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/onset.mp3">
+        <span class="num">25</span>
+        <span class="en">onset</span>
+        <span class="ko">시작, 개시, 발병</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/outset.mp3">
+        <span class="num">26</span>
+        <span class="en">outset</span>
+        <span class="ko">시작, 발단</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/permanently.mp3">
+        <span class="num">27</span>
+        <span class="en">permanently</span>
+        <span class="ko">영구히, 영원히</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/perpetual.mp3">
+        <span class="num">28</span>
+        <span class="en">perpetual</span>
+        <span class="ko">영구적인, 끊임없는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/progressive.mp3">
+        <span class="num">29</span>
+        <span class="en">progressive</span>
+        <span class="ko">점진적인, 진보적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch87/renewal.mp3">
+        <span class="num">30</span>
+        <span class="en">renewal</span>
+        <span class="ko">갱신, 재개, 부활</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

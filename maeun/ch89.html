@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 89</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 89</div>
+  <div class="theme">정도·수량·논리연결</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch89/amount.mp3">
+        <span class="num">01</span>
+        <span class="en">amount</span>
+        <span class="ko">양, 총액; ~에 이르다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/compare.mp3">
+        <span class="num">02</span>
+        <span class="en">compare</span>
+        <span class="ko">비교하다, 비유하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/decrease.mp3">
+        <span class="num">03</span>
+        <span class="en">decrease</span>
+        <span class="ko">감소하다; 감소</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/degree.mp3">
+        <span class="num">04</span>
+        <span class="en">degree</span>
+        <span class="ko">정도, 등급, (온도) 도</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/despite.mp3">
+        <span class="num">05</span>
+        <span class="en">despite</span>
+        <span class="ko">~에도 불구하고</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/distinct.mp3">
+        <span class="num">06</span>
+        <span class="en">distinct</span>
+        <span class="ko">뚜렷한, 별개의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/enormous.mp3">
+        <span class="num">07</span>
+        <span class="en">enormous</span>
+        <span class="ko">거대한, 막대한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/entire.mp3">
+        <span class="num">08</span>
+        <span class="en">entire</span>
+        <span class="ko">전체의, 온전한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/entirely.mp3">
+        <span class="num">09</span>
+        <span class="en">entirely</span>
+        <span class="ko">완전히, 전적으로</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/extent.mp3">
+        <span class="num">10</span>
+        <span class="en">extent</span>
+        <span class="ko">정도, 범위</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/instead.mp3">
+        <span class="num">11</span>
+        <span class="en">instead</span>
+        <span class="ko">대신에</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/lack.mp3">
+        <span class="num">12</span>
+        <span class="en">lack</span>
+        <span class="ko">부족; 부족하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/limit.mp3">
+        <span class="num">13</span>
+        <span class="en">limit</span>
+        <span class="ko">한계, 제한; 제한하다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/multiple.mp3">
+        <span class="num">14</span>
+        <span class="en">multiple</span>
+        <span class="ko">다수의, 복합적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/numerous.mp3">
+        <span class="num">15</span>
+        <span class="en">numerous</span>
+        <span class="ko">수많은</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/opposite.mp3">
+        <span class="num">16</span>
+        <span class="en">opposite</span>
+        <span class="ko">반대의; 반대되는 것</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/overall.mp3">
+        <span class="num">17</span>
+        <span class="en">overall</span>
+        <span class="ko">전반적인, 전체의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/range.mp3">
+        <span class="num">18</span>
+        <span class="en">range</span>
+        <span class="ko">범위, 폭; 이르다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/relatively.mp3">
+        <span class="num">19</span>
+        <span class="en">relatively</span>
+        <span class="ko">상대적으로, 비교적</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/significantly.mp3">
+        <span class="num">20</span>
+        <span class="en">significantly</span>
+        <span class="ko">상당히, 크게</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/similar.mp3">
+        <span class="num">21</span>
+        <span class="en">similar</span>
+        <span class="ko">비슷한, 유사한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/similarly.mp3">
+        <span class="num">22</span>
+        <span class="en">similarly</span>
+        <span class="ko">마찬가지로, 비슷하게</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/slight.mp3">
+        <span class="num">23</span>
+        <span class="en">slight</span>
+        <span class="ko">약간의, 경미한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/slightly.mp3">
+        <span class="num">24</span>
+        <span class="en">slightly</span>
+        <span class="ko">약간, 조금</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/subtle.mp3">
+        <span class="num">25</span>
+        <span class="en">subtle</span>
+        <span class="ko">미묘한, 감지하기 힘든</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/therefore.mp3">
+        <span class="num">26</span>
+        <span class="en">therefore</span>
+        <span class="ko">그러므로, 따라서</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/thus.mp3">
+        <span class="num">27</span>
+        <span class="en">thus</span>
+        <span class="ko">따라서, 그리하여</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/total.mp3">
+        <span class="num">28</span>
+        <span class="en">total</span>
+        <span class="ko">전체(의); 합계</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/unlike.mp3">
+        <span class="num">29</span>
+        <span class="en">unlike</span>
+        <span class="ko">~와 달리; 다른</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch89/vast.mp3">
+        <span class="num">30</span>
+        <span class="en">vast</span>
+        <span class="ko">방대한, 막대한</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>

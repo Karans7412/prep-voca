@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3분프렙 매운맛 &middot; Chapter 76</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #fff7f3; color: #1a1a1a; padding-bottom: 40px; }
+  header { position: relative; text-align: center; padding: 26px 60px 16px; border-bottom: 3px solid #C0392B; background: #fff; }
+  .hlogo { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); height: 48px; width: 48px; object-fit: contain; }
+  .logo { font-family: Georgia, serif; font-size: 32px; letter-spacing: 5px; font-weight: bold; color:#C0392B; }
+  .logo small { display: block; font-size: 12px; letter-spacing: 3px; font-style: italic; font-weight: normal; color:#922B21; margin-bottom: 2px; }
+  .chapter { margin-top: 8px; font-size: 14px; letter-spacing: 2px; color: #922B21; font-weight:600; }
+  .theme { font-size: 12px; color:#B0A9A2; margin-top:3px; }
+  .controls { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+  button { font-size: 16px; padding: 12px 22px; border: 2px solid #C0392B; background: #C0392B; color: #fff; border-radius: 999px; cursor: pointer; font-weight: 600; }
+  button.secondary { background: #fff; color: #C0392B; }
+  ul { list-style: none; max-width: 560px; margin: 0 auto; padding: 0 12px; }
+  .word { display: flex; align-items: center; gap: 12px; background: #fff; border: 1.5px solid #eecfc6; border-radius: 12px; padding: 13px 16px; margin-bottom: 8px; cursor: pointer; }
+  .word.playing { border-color: #C0392B; background: #fdeee8; }
+  .num { font-size: 12px; color: #c8b8b0; width: 20px; }
+  .en { font-size: 19px; font-weight: 700; flex: 0 0 auto; min-width: 130px; }
+  .ko { font-size: 14px; color: #666; flex: 1; }
+  .icon { color: #C0392B; font-size: 14px; }
+  footer { text-align: center; margin-top: 24px; font-size: 11px; color: #c8b8b0; }
+  .nav { text-align:center; margin-top:16px; }
+  .nav a { color:#922B21; text-decoration:none; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <img class="hlogo" src="logo.png" alt="PREP">
+  <div class="logo"><small>English</small>PREP</div>
+  <div class="chapter">VOCA &middot; CHAPTER 76</div>
+  <div class="theme">문화·예술·문학</div>
+</header>
+<div class="controls">
+  <button id="playAll">&#128266; 전체 듣기</button>
+  <button id="stop" class="secondary">&#9209; 정지</button>
+</div>
+<ul id="list">
+      <li class="word" data-src="audio/ch76/genius.mp3">
+        <span class="num">01</span>
+        <span class="en">genius</span>
+        <span class="ko">천재, 천재성</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/genre.mp3">
+        <span class="num">02</span>
+        <span class="en">genre</span>
+        <span class="ko">장르, 양식</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/heritage.mp3">
+        <span class="num">03</span>
+        <span class="en">heritage</span>
+        <span class="ko">유산, 전통</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/inspiration.mp3">
+        <span class="num">04</span>
+        <span class="en">inspiration</span>
+        <span class="ko">영감, 자극</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/irony.mp3">
+        <span class="num">05</span>
+        <span class="en">irony</span>
+        <span class="ko">아이러니, 반어법</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/legend.mp3">
+        <span class="num">06</span>
+        <span class="en">legend</span>
+        <span class="ko">전설, 위인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/masterpiece.mp3">
+        <span class="num">07</span>
+        <span class="en">masterpiece</span>
+        <span class="ko">걸작, 명작</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/medium.mp3">
+        <span class="num">08</span>
+        <span class="en">medium</span>
+        <span class="ko">매체, 수단; 중간의</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/melody.mp3">
+        <span class="num">09</span>
+        <span class="en">melody</span>
+        <span class="ko">멜로디, 선율</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/motif.mp3">
+        <span class="num">10</span>
+        <span class="en">motif</span>
+        <span class="ko">주제, 모티프</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/musical.mp3">
+        <span class="num">11</span>
+        <span class="en">musical</span>
+        <span class="ko">음악의, 뮤지컬</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/musician.mp3">
+        <span class="num">12</span>
+        <span class="en">musician</span>
+        <span class="ko">음악가, 연주자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/myth.mp3">
+        <span class="num">13</span>
+        <span class="en">myth</span>
+        <span class="ko">신화, 근거 없는 믿음</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/novelist.mp3">
+        <span class="num">14</span>
+        <span class="en">novelist</span>
+        <span class="ko">소설가</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/painter.mp3">
+        <span class="num">15</span>
+        <span class="en">painter</span>
+        <span class="ko">화가, 페인트공</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/patron.mp3">
+        <span class="num">16</span>
+        <span class="en">patron</span>
+        <span class="ko">후원자, 단골손님</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/performer.mp3">
+        <span class="num">17</span>
+        <span class="en">performer</span>
+        <span class="ko">연기자, 연주자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/playwright.mp3">
+        <span class="num">18</span>
+        <span class="en">playwright</span>
+        <span class="ko">극작가</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/plot.mp3">
+        <span class="num">19</span>
+        <span class="en">plot</span>
+        <span class="ko">줄거리, 음모</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/poem.mp3">
+        <span class="num">20</span>
+        <span class="en">poem</span>
+        <span class="ko">시</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/poet.mp3">
+        <span class="num">21</span>
+        <span class="en">poet</span>
+        <span class="ko">시인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/poetic.mp3">
+        <span class="num">22</span>
+        <span class="en">poetic</span>
+        <span class="ko">시적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/poetry.mp3">
+        <span class="num">23</span>
+        <span class="en">poetry</span>
+        <span class="ko">시, 시가</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/portrait.mp3">
+        <span class="num">24</span>
+        <span class="en">portrait</span>
+        <span class="ko">초상화, 인물화</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/portray.mp3">
+        <span class="num">25</span>
+        <span class="en">portray</span>
+        <span class="ko">묘사하다, 그리다</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/protagonist.mp3">
+        <span class="num">26</span>
+        <span class="en">protagonist</span>
+        <span class="ko">주인공</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/realistic.mp3">
+        <span class="num">27</span>
+        <span class="en">realistic</span>
+        <span class="ko">사실적인, 현실적인</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/renowned.mp3">
+        <span class="num">28</span>
+        <span class="en">renowned</span>
+        <span class="ko">유명한, 명성 있는</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/representation.mp3">
+        <span class="num">29</span>
+        <span class="en">representation</span>
+        <span class="ko">표현, 묘사, 대표</span>
+        <span class="icon">&#9654;</span>
+      </li>
+      <li class="word" data-src="audio/ch76/rhythm.mp3">
+        <span class="num">30</span>
+        <span class="en">rhythm</span>
+        <span class="ko">리듬, 박자</span>
+        <span class="icon">&#9654;</span>
+      </li>
+</ul>
+<div class="nav"><a href="index.html">&#8592; 챕터 목록</a></div>
+<footer>&copy; 프렙영어 All rights reserved.</footer>
+<script>
+  var audio = new Audio();
+  var items = [].slice.call(document.querySelectorAll('.word'));
+  var seq = [], idx = 0;
+  var INTRO='../audio/intro.mp3', OUTRO='../audio/outro.mp3', GREET='../audio/greet.mp3';
+  function mark(el){ items.forEach(function(i){i.classList.remove('playing');}); if(el) el.classList.add('playing'); }
+  function run(list){ seq=list; idx=0; step(); }
+  function step(){ if(idx>=seq.length){mark(null);return;} var c=seq[idx++]; mark(c.el); audio.src=c.src; audio.play().catch(step); }
+  audio.onended = step;
+  items.forEach(function(el){ el.addEventListener('click', function(){ run([{src:GREET,el:null},{src:el.dataset.src,el:el}]); }); });
+  document.getElementById('playAll').addEventListener('click', function(){ run([{src:INTRO,el:null}].concat(items.map(function(el){return {src:el.dataset.src,el:el};})).concat([{src:OUTRO,el:null}])); });
+  document.getElementById('stop').addEventListener('click', function(){ seq=[]; idx=0; audio.pause(); mark(null); });
+</script>
+</body>
+</html>
